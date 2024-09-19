@@ -1,6 +1,7 @@
 import { Table, Image, InputNumber } from 'antd';
 import { useCart, useCartDispatch } from '../context/cart/Cart';
 import { ProductStateType } from '../context/cart/type';
+import { deleteIcon } from '../assets/Icons';
 
 const { Column } = Table;
 
@@ -54,6 +55,24 @@ const CartTable: React.FC = () => {
         title="SubTotal"
         key="subtotal"
         render={({ ...product }: ProductStateType) => <p style={{ color: '#0a66c2' }}>Rs. {product.quantity * product.price}</p>}
+      />
+      <Column
+        title="Remove"
+        key="remove"
+        render={({ ...product }: ProductStateType) => 
+          <span 
+            style={{ cursor: 'pointer' }} 
+            onClick={() => {
+              cartDispatchContext.cartDispatch({
+                type: 'remove',
+                id: product.id,
+              });
+            }}
+          >
+            {deleteIcon}
+          </span>}
+        align='center'
+        width={'5%'}
       />
     </Table>
   );
