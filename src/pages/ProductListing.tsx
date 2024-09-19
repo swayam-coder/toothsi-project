@@ -3,7 +3,7 @@ import { fetchProducts } from '../api/products';
 import { Product } from '../types/product';
 import ProductListingTable from '../components/ProductListTable';
 import ListingHeader from '../components/ListingHeader';
-import { notification } from 'antd';
+import { Typography, notification } from 'antd';
 import { useProducts } from '../context/product/Product';
 
 const ProductListing: React.FC = () => {
@@ -59,6 +59,7 @@ const ProductListing: React.FC = () => {
     <div style={{ color: 'white' }}>Loading...</div>
   ) : (
     <div>
+      <Typography.Title level={2} style={{ marginTop: 0, textAlign: 'left', color: 'white' }}>E-commerce App</Typography.Title>
       <ListingHeader products={products.data} />
       <ProductListingTable products={filteredProducts} />
     </div>
