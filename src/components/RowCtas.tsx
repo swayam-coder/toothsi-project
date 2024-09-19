@@ -37,7 +37,7 @@ const RowCtas: React.FC<{
       type: 'add',
       product: { ...product, quantity },
     });
-    navigate('/checkout');
+    navigate('/cart');
   };
 
   const onChangeCheckbox = (e: CheckboxChangeEvent) =>

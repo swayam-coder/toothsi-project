@@ -53,7 +53,7 @@ const ListingHeader: React.FC<{ products: Product[] }> = ({ products }) => {
           }
         }
 
-        navigate('/checkout');
+        navigate('/cart');
       }
     } else {
       notification.info({ message: 'Select some products to proceed' });

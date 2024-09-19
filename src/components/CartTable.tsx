@@ -4,7 +4,7 @@ import { ProductStateType } from '../context/cart/type';
 
 const { Column } = Table;
 
-const CheckoutTable: React.FC = () => {
+const CartTable: React.FC = () => {
   const cartProducts = useCart();
   const checkoutList = cartProducts.checkoutList ?? [];
 
@@ -50,8 +50,13 @@ const CheckoutTable: React.FC = () => {
           />
         )}
       />
+      <Column
+        title="SubTotal"
+        key="subtotal"
+        render={({ ...product }: ProductStateType) => <p style={{ color: '#0a66c2' }}>Rs. {product.quantity * product.price}</p>}
+      />
     </Table>
   );
 };
 
-export default CheckoutTable;
+export default CartTable;

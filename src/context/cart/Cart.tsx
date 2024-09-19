@@ -45,10 +45,12 @@ const cartReducer = (
 ): ProductStateType[] => {
   switch (action.type) {
     case 'add': {
-      return [
-        ...products.filter((t) => t.id !== action.product.id),
-        action.product,
-      ];
+      return products?.find(p => p.id === action.product.id) ? 
+        products.map(p => p.id === action.product.id ? action.product : p) 
+        : [
+          ...products?.filter((t) => t.id !== action.product.id),
+          action.product,
+        ] 
     }
     case 'remove': {
       return products.filter((t) => t.id !== action.id);
