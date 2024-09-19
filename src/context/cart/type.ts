@@ -1,5 +1,3 @@
-// import { Product } from "../types/product";
-
 import { Product } from '../../types/product';
 
 export interface ProductStateType extends Product {

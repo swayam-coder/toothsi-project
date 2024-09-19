@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { ProductContext } from '../context/Product';
 import { fetchProducts } from '../api/products';
 import { Product } from '../types/product';
 import ProductListingTable from '../components/ProductListTable';

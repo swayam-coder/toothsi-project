@@ -1,4 +1,4 @@
-import { Button, Card, Col, Divider, Row, Typography } from "antd"
+import { Button, Card, Col, Row, Typography } from "antd"
 import { useCart } from "../context/cart/Cart";
 import { useNavigate } from "react-router-dom";
 
