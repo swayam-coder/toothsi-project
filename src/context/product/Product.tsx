@@ -16,7 +16,7 @@ import {
 const initialFilters: FilterState = {
   category: null,
   brand: null,
-  priceRange: [0, 10000],
+  priceRange: [0, Infinity],
   search: undefined,
 };
 

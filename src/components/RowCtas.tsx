@@ -80,7 +80,7 @@ const RowCtas: React.FC<{
           if (quantity) {
             onCartClick(product, quantity);
           } else {
-            notification.error({ message: 'Quantity cant be zero' });
+            notification.error({ message: "Quantity can't be zero" });
           }
         }}
       >
