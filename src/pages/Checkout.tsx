@@ -1,9 +1,13 @@
 import { Typography } from "antd";
 import { useLocation } from "react-router-dom";
 
+interface LocationState {
+  subtotal?: number;
+}
+
 const FinalPage: React.FC = () => {
   const location = useLocation();
-  const state = location.state;
+  const state = location.state as LocationState;
   
   return (
     <div>
