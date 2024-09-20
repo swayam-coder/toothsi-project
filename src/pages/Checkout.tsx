@@ -12,7 +12,7 @@ const FinalPage: React.FC = () => {
   return (
     <div>
       <Typography.Title style={{ color: 'white' }}>Thank you for shopping!</Typography.Title>
-      <Typography.Paragraph style={{ color: 'white' }}>Total Amount: Rs. {state.subtotal}</Typography.Paragraph>
+      <Typography.Paragraph style={{ color: 'white' }}>Total Amount: Rs. {state.subtotal ?? 'N/A'}</Typography.Paragraph>
     </div>
   )
 };
