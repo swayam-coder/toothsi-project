@@ -32,7 +32,11 @@ const CartBox: React.FC = () => {
           type="primary"
           size="large"
           style={{ marginTop: '16px', width: '100%', backgroundColor: '#003399' }}
-          onClick={() => navigate('/checkout')}
+          onClick={() => navigate('/checkout', {
+            state: {
+              subtotal,
+            },
+          })}
         >
           Proceed to Checkout
         </Button>

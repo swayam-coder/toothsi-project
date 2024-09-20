@@ -1,7 +1,16 @@
 import { Typography } from "antd";
+import { useLocation } from "react-router-dom";
 
 const FinalPage: React.FC = () => {
-  return <Typography.Title style={{ color: 'white' }}>Thank you for shopping!</Typography.Title>;
+  const location = useLocation();
+  const state = location.state;
+  
+  return (
+    <div>
+      <Typography.Title style={{ color: 'white' }}>Thank you for shopping!</Typography.Title>
+      <Typography.Paragraph style={{ color: 'white' }}>Total Amount: Rs. {state.subtotal}</Typography.Paragraph>
+    </div>
+  )
 };
 
 export default FinalPage;
