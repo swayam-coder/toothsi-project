@@ -19,7 +19,6 @@ const ProductListingTable: React.FC<{
           <Image src={images[0]} width={48} height={48} alt="Product" />
         )}
         width='10%'
-        fixed="left"
       />
       <Column
         title="Name"
@@ -81,6 +80,7 @@ const ProductListingTable: React.FC<{
           <RowCtas product={product} />
         )}
         fixed="right"
+        width='200px'
       />
     </Table>
   );
