@@ -108,6 +108,7 @@ const ListingHeader: React.FC<{ products: Product[] }> = ({ products }) => {
               </Select>
             </Col>
             <Col span={24}>
+              <p>Filter by price</p>
               <Tooltip title="Filter by price">
                 <Slider
                   range
