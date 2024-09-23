@@ -10,7 +10,7 @@ const CartBox: React.FC = () => {
    const subtotal = checkoutList.reduce((prev, curr) => prev + curr.price * curr.quantity, 0).toFixed(2)
 
     return (
-      <Card bordered={false} style={{ width: 300 }}>
+      <Card bordered={false}>
         <Typography.Title level={4} style={{ marginTop: 0 }}>Cart total</Typography.Title>
         <Row justify="space-between">
           <Col>
@@ -38,7 +38,7 @@ const CartBox: React.FC = () => {
             },
           })}
         >
-          Proceed to Checkout
+          <p style={{ whiteSpace: 'break-spaces' }}>Proceed to Checkout</p>
         </Button>
       </Card>
     )

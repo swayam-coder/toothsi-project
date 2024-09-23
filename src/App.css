@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.ant-table,
+.ant-table-container {
+  border-radius: 8px !important;
+}
+
+/* .ant-table-container table {
+  border-radius: 8px;
+} */
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -10,7 +10,7 @@ const ProductListingTable: React.FC<{
   products: Product[];
 }> = ({ products }) => {
   return (
-    <Table bordered dataSource={products} rowKey="id">
+    <Table pagination={false} scroll={{ y: 'calc(100vh - 240px)', x: 1000 }} dataSource={products} rowKey="id">
       <Column
         title="Image"
         dataIndex="images"
@@ -18,6 +18,8 @@ const ProductListingTable: React.FC<{
         render={(images: string[]) => (
           <Image src={images[0]} width={48} height={48} alt="Product" />
         )}
+        width='10%'
+        fixed="left"
       />
       <Column
         title="Name"
@@ -33,6 +35,7 @@ const ProductListingTable: React.FC<{
         sorter={(a: Product, b: Product) =>
           a.category.localeCompare(b.category)
         }
+        width='10%'
       />
       <Column
         title="Rating"
@@ -40,6 +43,7 @@ const ProductListingTable: React.FC<{
         key="rating"
         render={(rating: number) => <Rate disabled defaultValue={rating} />}
         sorter={(a: Product, b: Product) => a.rating - b.rating}
+        width='15%'
       />
       <Column
         title="Brand"
@@ -59,6 +63,7 @@ const ProductListingTable: React.FC<{
             <Text type="danger">Out of stock</Text>
           )
         }
+        width='10%'
       />
       <Column
         title="Price"
@@ -66,6 +71,7 @@ const ProductListingTable: React.FC<{
         key="price"
         render={(price: number) => `Rs. ${price}`}
         sorter={(a: Product, b: Product) => a.price - b.price}
+        width='10%'
       />
       <Column
         title="Buy"
@@ -74,6 +80,7 @@ const ProductListingTable: React.FC<{
         render={({ ...product }: ProductStateType) => (
           <RowCtas product={product} />
         )}
+        fixed="right"
       />
     </Table>
   );

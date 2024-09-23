@@ -12,7 +12,7 @@ const CartTable: React.FC = () => {
   const cartDispatchContext = useCartDispatch();
 
   return (
-    <Table pagination={false} bordered dataSource={checkoutList} rowKey="id">
+    <Table pagination={false} scroll={{ y: 'calc(100vh - 240px)', x: 1000 }} bordered dataSource={checkoutList} rowKey="id">
       <Column
         title="Image"
         dataIndex="images"
@@ -20,6 +20,8 @@ const CartTable: React.FC = () => {
         render={(images: string[]) => (
           <Image src={images[0]} width={48} height={48} alt="Product" />
         )}
+        fixed="left"
+        width='10%'
       />
       <Column title="Product" dataIndex="title" key="title" />
       <Column
@@ -72,7 +74,8 @@ const CartTable: React.FC = () => {
             {deleteIcon}
           </span>}
         align='center'
-        width={'5%'}
+        width={'10%'}
+        fixed="right"
       />
     </Table>
   );
